@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amar Ibishi · Web Developer & Photographer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/logo bardh.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="assets/cv/logo.png">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- 🎁 PROMO BANNER (në krye) -->
+  <div class="promo-banner" id="promoBanner">
+    <div class="promo-banner-content">
+      <i class="fas fa-gift"></i>
+      <span data-key="banner_text">🎁 Limited Offer: 20% OFF on your first project!</span>
+      <a href="#contact" class="promo-banner-btn" data-key="banner_cta">Claim Now</a>
+    </div>
+    <button class="promo-banner-close" id="bannerClose" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/cv/logobg.png" alt="Amar Ibishi Logo"  class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" data-key="nav_about">About</a></li>
+        <li><a href="#experience" data-key="nav_experience">Experience</a></li>
+        <li><a href="#projects" data-key="nav_projects">Projects</a></li>
+        <li><a href="#skills" data-key="nav_skills">Skills</a></li>
+        <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-code" id="langCode">EN</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <div class="hero-status">
+          <span class="pulse-dot"></span>
+          <span data-key="hero_status">Available for freelance work</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="line" data-key="hero_hi">Hi, I'm</span>
+          <span class="gradient-text">Amar Ibishi</span>
+        </h1>
+        <div class="hero-roles">
+          <span class="role-tag"><i class="fas fa-code"></i> <span data-key="hero_role1">Web Developer</span></span>
+          <span class="role-divider">×</span>
+          <span class="role-tag"><i class="fas fa-camera-retro"></i> <span data-key="hero_role2">Photographer</span></span>
+        </div>
+        <p class="hero-desc" data-key="hero_desc">
+          Turning ideas into functional web experiences and capturing life's best moments.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span data-key="hero_cta1">View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span data-key="hero_cta2">Get in Touch</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+          <a href="assets/cv/amaribishicv.pdf" download="Amar_Ibishi_CV.pdf" class="btn btn-cv">
+            <span data-key="hero_cta3">Download CV</span>
+            <i class="fas fa-download"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num" data-count="6">0</div>
+            <div class="stat-label" data-key="stat_projects">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="3">0</div>
+            <div class="stat-label" data-key="stat_years">Years Coding</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="10">0</div>
+            <div class="stat-label" data-key="stat_tech">Technologies</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="profile-card">
+          <div class="profile-glow"></div>
+          <div class="profile-avatar">
+            <img src="assets/cv/logo.png" alt="Amar Ibishi" class="profile-img">
+          </div>
+          <h3>Amar Ibishi</h3>
+          <p class="profile-role" data-key="profile_role">Full Stack Developer</p>
+          <div class="profile-contacts">
+            <a href="tel:+38343536087" class="contact-item"><i class="fas fa-phone-alt"></i> <span>+383 43 536 087</span></a>
+            <a href="tel:+381638438155" class="contact-item"><i class="fas fa-phone-alt"></i> <span>+381 63 84 38 155</span></a>
+            <a href="mailto:amaribishi3@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> <span>amaribishi3@gmail.com</span></a>
+            <div class="contact-item"><i class="fas fa-map-pin"></i> <span data-key="profile_loc">Kosovo / Region · Remote</span></div>
+          </div>
+          <div class="social-row">
+            <a href="https://linkedin.com/in/amar-ibishi-8a2727301" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ibishiamar" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:amaribishi3@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / SUMMARY -->
+    <section id="about" class="reveal">
+      <div class="section-title">
+        <i class="fas fa-user-circle"></i>
+        <h2 data-key="about_title">About Me</h2>
+      </div>
+      <div class="card summary-card">
+        <p data-key="about_text">
+          Web Developer and Programmer with a strong passion for technology, design, and photography.
+          Skilled in developing web applications using PHP, MySQL, HTML, CSS, and JavaScript.
+          Dedicated to creating functional, modern, and professional solutions. Highly motivated to build
+          a successful career in the IT and software development industry, continuously improving
+          technical skills and embracing new challenges.
+        </p>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE + EDUCATION -->
+    <div class="two-col" id="experience">
+      <section class="reveal">
+        <div class="section-title">
+          <i class="fas fa-briefcase"></i>
+          <h2 data-key="exp_title">Work Experience</h2>
+        </div>
+        <div class="card timeline-card">
+          <div class="timeline-dot"></div>
+          <h3 data-key="exp_role">Web Developer & Programmer</h3>
+          <div class="subhead"><i class="fas fa-building"></i> <span data-key="exp_place">Freelance / Personal Projects</span></div>
+          <div class="subhead date"><i class="fas fa-calendar-alt"></i> <span>2023 – Present</span></div>
+          <p data-key="exp_text">
+            Completed structured training in Full Stack Development, working with technologies such as
+            React.js, PHP, JavaScript, SQL, and MySQL. Developed functional web applications, featuring
+            interactive forms, data management, and responsive design. Gained hands-on experience with
+            Git for version control and collaborative development workflows.
+          </p>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <div class="section-title">
+          <i class="fas fa-graduation-cap"></i>
+          <h2 data-key="edu_title">Education</h2>
+        </div>
+        <div class="card timeline-card">
+          <div class="timeline-dot"></div>
+          <h3 data-key="edu_role">Faculty of Computer Science</h3>
+          <div class="subhead"><i class="fas fa-university"></i> <span data-key="edu_place">AAB College</span></div>
+          <div class="subhead date"><i class="fas fa-calendar-alt"></i> <span>2023 / 2026</span></div>
+          <p data-key="edu_text">
+            Currently pursuing a Bachelor's degree in Computer Science at AAB College, with a focus on
+            software development, web technologies, databases, and information systems. Developing strong
+            analytical, programming, and problem-solving skills through academic projects and practical work.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROJECTS + CERTIFICATION -->
+    <div class="two-col" id="projects">
+      <section class="reveal">
+        <div class="section-title">
+          <i class="fas fa-laptop-code"></i>
+          <h2 data-key="proj_title">Featured Projects</h2>
+        </div>
+        <div class="card">
+          <div class="project-links-list">
+            <a href="https://amar1photography.netlify.app/" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fas fa-camera"></i></div>
+              <div class="proj-info">
+                <span class="proj-name">Amaribishi Photography</span>
+                <span class="proj-hint" data-key="proj_visit">Visit site</span>
+              </div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+            <a href="https://robaqepsjasadushja.netlify.app/" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fas fa-tshirt"></i></div>
+              <div class="proj-info">
+                <span class="proj-name">Roba Qepsja Sadushja</span>
+                <span class="proj-hint" data-key="proj_visit">Visit site</span>
+              </div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+            <a href="https://cozy-cucurucho-f08c7c.netlify.app/" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fas fa-ice-cream"></i></div>
+              <div class="proj-info">
+                <span class="proj-name">Cozy Cucurucho</span>
+                <span class="proj-hint" data-key="proj_visit">Visit site</span>
+              </div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+            <a href="https://neexcodee.netlify.app/" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fas fa-code"></i></div>
+              <div class="proj-info">
+                <span class="proj-name">NeexCodee</span>
+                <span class="proj-hint" data-key="proj_visit">Visit site</span>
+              </div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+            <a href="https://amaribishi.netlify.app/" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fas fa-user"></i></div>
+              <div class="proj-info">
+                <span class="proj-name">Amaribishi</span>
+                <span class="proj-hint" data-key="proj_visit">Visit site</span>
+              </div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+            <a href="https://vapelegends.netlify.app/" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fas fa-fire"></i></div>
+              <div class="proj-info">
+                <span class="proj-name">Vape Legends</span>
+                <span class="proj-hint" data-key="proj_visit">Visit site</span>
+              </div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <div class="section-title">
+          <i class="fas fa-certificate"></i>
+          <h2 data-key="cert_title">Certification</h2>
+        </div>
+        <div class="card cert-card">
+          <div class="cert-badge">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 data-key="cert_name">Certificate of Achievement</h3>
+          <div class="subhead"><i class="fas fa-laptop"></i> <span data-key="cert_org">Full-Stack Developer PERPROGRAMERA</span></div>
+          <div class="subhead date"><i class="fas fa-calendar-alt"></i> <span>2022</span></div>
+        </div>
+
+        <div class="section-title" style="margin-top: 2rem;">
+          <i class="fas fa-link"></i>
+          <h2 data-key="links_title">Quick Links</h2>
+        </div>
+        <div class="card">
+          <div class="project-links-list">
+            <a href="https://linkedin.com/in/amar-ibishi-8a2727301" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div class="proj-info"><span class="proj-name">LinkedIn</span><span class="proj-hint">/amar-ibishi</span></div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+            <a href="https://github.com/ibishiamar" target="_blank" class="project-link-item">
+              <div class="proj-icon"><i class="fab fa-github"></i></div>
+              <div class="proj-info"><span class="proj-name">GitHub</span><span class="proj-hint">@ibishiamar</span></div>
+              <i class="fas fa-arrow-right proj-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <div class="section-title">
+        <i class="fas fa-cogs"></i>
+        <h2 data-key="skills_title">Skills & Expertise</h2>
+      </div>
+      <div class="skills-wrapper">
+        <div class="skill-category">
+          <h4><i class="fas fa-code"></i> <span data-key="skill_cat1">Web Development</span></h4>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">PHP</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4><i class="fas fa-database"></i> <span data-key="skill_cat2">Backend & Database</span></h4>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">C# (.NET)</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4><i class="fas fa-palette"></i> <span data-key="skill_cat3">Design & Tools</span></h4>
+          <div class="skill-tags">
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Responsive</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4><i class="fas fa-language"></i> <span data-key="skill_cat4">Languages</span></h4>
+          <div class="skill-tags">
+            <span class="skill-tag lang-tag">English A1</span>
+            <span class="skill-tag lang-tag">Deutsch A1</span>
+            <span class="skill-tag lang-tag">Serbian A1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="section-title">
+        <i class="fas fa-paper-plane"></i>
+        <h2 data-key="contact_title">Get in Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+38343536087" class="contact-card">
+          <i class="fas fa-phone-alt"></i>
+          <h4 data-key="contact_phone">Phone</h4>
+          <p>+383 43 536 087</p>
+        </a>
+        <a href="mailto:amaribishi3@gmail.com" class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h4 data-key="contact_email">Email</h4>
+          <p>amaribishi3@gmail.com</p>
+        </a>
+        <a href="https://linkedin.com/in/amar-ibishi-8a2727301" target="_blank" class="contact-card">
+          <i class="fab fa-linkedin-in"></i>
+          <h4>LinkedIn</h4>
+          <p>amar-ibishi</p>
+        </a>
+        <a href="https://github.com/ibishiamar" target="_blank" class="contact-card">
+          <i class="fab fa-github"></i>
+          <h4>GitHub</h4>
+          <p>@ibishiamar</p>
+        </a>
+        <a href="assets/cv/amaribishicv.pdf" download="Amar_Ibishi_CV.pdf" class="contact-card cv-card">
+          <i class="fas fa-file-pdf"></i>
+          <h4 data-key="contact_cv">Download CV</h4>
+          <p data-key="contact_cv_hint">PDF · 1 click</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- SLOGAN FOOTER -->
+    <div class="footer-slogan reveal">
+      <div class="big-text">
+        <span data-key="slogan1">BETTER CODE</span><br>
+        <span class="gradient-text" data-key="slogan2">BIGGER DREAMS</span>
+      </div>
+      <div class="cta">
+        <i class="fas fa-rocket"></i> <span data-key="slogan_cta">LET'S BUILD SOMETHING GREAT!</span> <i class="fas fa-hand-peace"></i>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <i class="fas fa-camera"></i> Amar Ibishi · <span data-key="footer_role">Web Developer & Photographer</span> · © 2026
+    </div>
+
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Floating CV Button -->
+  <a href="assets/cv/amaribishicv.pdf" download="Amar_Ibishi_CV.pdf" class="floating-cv" aria-label="Download CV">
+    <i class="fas fa-file-pdf"></i>
+    <span data-key="floating_cv">Download CV</span>
+  </a>
+
+  <!-- 🎯 POPUP REKLAMË (në mes) -->
+  <div class="promo-overlay" id="promoOverlay"></div>
+  <div class="promo-modal" id="promoModal">
+    <div class="promo-modal-inner">
+      <button class="promo-close" id="promoClose" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="promo-icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h3 data-key="promo_title">Ready to start a project?</h3>
+      <p data-key="promo_text">Let's turn your idea into a stunning website. Get a free consultation today!</p>
+      <div class="promo-actions">
+        <a href="#contact" class="btn btn-primary" data-key="promo_cta">Get a Free Quote</a>
+        <button class="btn btn-ghost" id="promoLater" data-key="promo_later">Maybe Later</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 💬 CHAT BUBBLE -->
+  <div class="chat-bubble" id="chatBubble">
+    <button class="chat-bubble-btn" id="chatToggle" aria-label="Chat">
+      <i class="fas fa-comments"></i>
+      <span class="chat-badge">1</span>
+    </button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <span class="chat-status"></span>
+          <span data-key="chat_online">Online now</span>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chat-body">
+        <div class="chat-message">
+          <div class="chat-avatar">A</div>
+          <div class="chat-text">
+            <p data-key="chat_msg">👋 Hi! Need a website or photo session? Let's chat!</p>
+            <span class="chat-time">Just now</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-actions">
+        <a href="https://wa.me/383638438155" target="_blank" class="chat-action-btn whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          <span data-key="chat_whatsapp">WhatsApp</span>
+        </a>
+        <a href="mailto:amaribishi3@gmail.com" class="chat-action-btn email">
+          <i class="fas fa-envelope"></i>
+          <span data-key="chat_email">Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📢 TOAST NOTIFICATION -->
+  <div class="promo-toast" id="promoToast">
+    <div class="toast-icon"><i class="fas fa-bolt"></i></div>
+    <div class="toast-content">
+      <strong data-key="toast_title">Need a website?</strong>
+      <p data-key="toast_text">Let's build it together. Free consultation!</p>
+    </div>
+    <a href="#contact" class="toast-action" data-key="toast_cta">Hire Me</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
