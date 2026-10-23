@@ -27,18 +27,6 @@
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- 🎁 PROMO BANNER (në krye) -->
-  <div class="promo-banner" id="promoBanner">
-    <div class="promo-banner-content">
-      <i class="fas fa-gift"></i>
-      <span data-key="banner_text">🎁 Limited Offer: 20% OFF on your first project!</span>
-      <a href="#contact" class="promo-banner-btn" data-key="banner_cta">Claim Now</a>
-    </div>
-    <button class="promo-banner-close" id="bannerClose" aria-label="Close">
-      <i class="fas fa-times"></i>
-    </button>
-  </div>
-
   <!-- Navigation Bar -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
@@ -97,7 +85,7 @@
             <span data-key="hero_cta2">Get in Touch</span>
             <i class="fas fa-paper-plane"></i>
           </a>
-          <a href="assets/cv/amaribishicv.pdf" download="Amar_Ibishi_CV.pdf" class="btn btn-cv">
+          <a href="assets/cv/Amar ibishi (1).pdf" download="Amar_Ibishi_CV.pdf" class="btn btn-cv">
             <span data-key="hero_cta3">Download CV</span>
             <i class="fas fa-download"></i>
           </a>
@@ -351,10 +339,16 @@
           <h4 data-key="contact_phone">Phone</h4>
           <p>+383 43 536 087</p>
         </a>
+         <a href="tel:+381638438155" class="contact-card">
+          <i class="fas fa-phone-alt"></i>
+          <h4 data-key="contact_phone">Phone</h4>
+          <p>+381 63 843 8155</p>
+        </a>
         <a href="mailto:amaribishi3@gmail.com" class="contact-card">
           <i class="fas fa-envelope"></i>
           <h4 data-key="contact_email">Email</h4>
           <p>amaribishi3@gmail.com</p>
+          <p>NeexCodee@gmail.com</p>
         </a>
         <a href="https://linkedin.com/in/amar-ibishi-8a2727301" target="_blank" class="contact-card">
           <i class="fab fa-linkedin-in"></i>
@@ -366,11 +360,7 @@
           <h4>GitHub</h4>
           <p>@ibishiamar</p>
         </a>
-        <a href="assets/cv/amaribishicv.pdf" download="Amar_Ibishi_CV.pdf" class="contact-card cv-card">
-          <i class="fas fa-file-pdf"></i>
-          <h4 data-key="contact_cv">Download CV</h4>
-          <p data-key="contact_cv_hint">PDF · 1 click</p>
-        </a>
+
       </div>
     </section>
 
@@ -386,7 +376,7 @@
     </div>
 
     <div class="footer-note">
-      <i class="fas fa-camera"></i> Amar Ibishi · <span data-key="footer_role">Web Developer & Photographer</span> · © 2026
+      <i class="fas fa-copyright"></i> Amar Ibishi · <span data-key="footer_role">Web Developer & Photographer</span> · © 2026
     </div>
 
   </div>
@@ -394,79 +384,6 @@
   <button class="back-top" id="backTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-
-  <!-- Floating CV Button -->
-  <a href="assets/cv/amaribishicv.pdf" download="Amar_Ibishi_CV.pdf" class="floating-cv" aria-label="Download CV">
-    <i class="fas fa-file-pdf"></i>
-    <span data-key="floating_cv">Download CV</span>
-  </a>
-
-  <!-- 🎯 POPUP REKLAMË (në mes) -->
-  <div class="promo-overlay" id="promoOverlay"></div>
-  <div class="promo-modal" id="promoModal">
-    <div class="promo-modal-inner">
-      <button class="promo-close" id="promoClose" aria-label="Close">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="promo-icon">
-        <i class="fas fa-rocket"></i>
-      </div>
-      <h3 data-key="promo_title">Ready to start a project?</h3>
-      <p data-key="promo_text">Let's turn your idea into a stunning website. Get a free consultation today!</p>
-      <div class="promo-actions">
-        <a href="#contact" class="btn btn-primary" data-key="promo_cta">Get a Free Quote</a>
-        <button class="btn btn-ghost" id="promoLater" data-key="promo_later">Maybe Later</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 💬 CHAT BUBBLE -->
-  <div class="chat-bubble" id="chatBubble">
-    <button class="chat-bubble-btn" id="chatToggle" aria-label="Chat">
-      <i class="fas fa-comments"></i>
-      <span class="chat-badge">1</span>
-    </button>
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-header">
-        <div class="chat-header-info">
-          <span class="chat-status"></span>
-          <span data-key="chat_online">Online now</span>
-        </div>
-        <button class="chat-close" id="chatClose" aria-label="Close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="chat-body">
-        <div class="chat-message">
-          <div class="chat-avatar">A</div>
-          <div class="chat-text">
-            <p data-key="chat_msg">👋 Hi! Need a website or photo session? Let's chat!</p>
-            <span class="chat-time">Just now</span>
-          </div>
-        </div>
-      </div>
-      <div class="chat-actions">
-        <a href="https://wa.me/383638438155" target="_blank" class="chat-action-btn whatsapp">
-          <i class="fab fa-whatsapp"></i>
-          <span data-key="chat_whatsapp">WhatsApp</span>
-        </a>
-        <a href="mailto:amaribishi3@gmail.com" class="chat-action-btn email">
-          <i class="fas fa-envelope"></i>
-          <span data-key="chat_email">Email</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 📢 TOAST NOTIFICATION -->
-  <div class="promo-toast" id="promoToast">
-    <div class="toast-icon"><i class="fas fa-bolt"></i></div>
-    <div class="toast-content">
-      <strong data-key="toast_title">Need a website?</strong>
-      <p data-key="toast_text">Let's build it together. Free consultation!</p>
-    </div>
-    <a href="#contact" class="toast-action" data-key="toast_cta">Hire Me</a>
-  </div>
 
   <script src="script.js"></script>
 </body>

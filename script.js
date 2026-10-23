@@ -1,6 +1,6 @@
 // ============================================
 // AMAR IBISHI — PORTFOLIO SCRIPT
-// Bilingual · Dark/Light · Animated · Promo
+// Bilingual · Dark/Light · Animated
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,23 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slogan1: "BETTER CODE",
       slogan2: "BIGGER DREAMS",
       slogan_cta: "LET'S BUILD SOMETHING GREAT!",
-      footer_role: "Web Developer & Photographer",
-      floating_cv: "Download CV",
-      // Promo
-      promo_title: "Ready to start a project?",
-      promo_text: "Let's turn your idea into a stunning website. Get a free consultation today!",
-      promo_cta: "Get a Free Quote",
-      promo_later: "Maybe Later",
-      chat_online: "Online now",
-      chat_msg: "👋 Hi! Need a website or photo session? Let's chat!",
-      chat_whatsapp: "WhatsApp",
-      chat_email: "Email",
-      banner_text: "🎁 Limited Offer: 20% OFF on your first project!",
-      banner_cta: "Claim Now",
-      toast_title: "Need a website?",
-      toast_text: "Let's build it together. Free consultation!",
-      toast_cta: "Hire Me",
-      float_cta: "Hire Me Now"
+      footer_role: "Web Developer & Photographer"
     },
     sq: {
       nav_about: "Rreth Meje",
@@ -125,23 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slogan1: "KOD MË I MIRË",
       slogan2: "ËNDRRA MË TË MËDHA",
       slogan_cta: "LE TË NDËRTOJMË DIÇKA TË MADHE!",
-      footer_role: "Zhvillues Web & Fotograf",
-      floating_cv: "Shkarko CV",
-      // Promo
-      promo_title: "Gati për të nisur një projekt?",
-      promo_text: "Le ta kthejmë idenë tuaj në një website mahnitës. Merr një konsultë falas sot!",
-      promo_cta: "Merr Ofertë Falas",
-      promo_later: "Ndoshta Më Vonë",
-      chat_online: "Online tani",
-      chat_msg: "👋 Përshëndetje! Ke nevojë për një website ose sesion fotografik? Le të bisedojmë!",
-      chat_whatsapp: "WhatsApp",
-      chat_email: "Email",
-      banner_text: "🎁 Ofertë e Limituar: 20% ZBRITJE për projektin tuaj të parë!",
-      banner_cta: "Merr Tani",
-      toast_title: "Ke nevojë për një website?",
-      toast_text: "Le ta ndërtojmë së bashku. Konsultë falas!",
-      toast_cta: "Punëso Mua",
-      float_cta: "Punëso Mua Tani"
+      footer_role: "Zhvillues Web & Fotograf"
     }
   };
 
@@ -489,178 +457,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 🎯 PROMO MODAL (Popup)
-  // ============================================
-  const promoModal = document.getElementById('promoModal');
-  const promoOverlay = document.getElementById('promoOverlay');
-  const promoClose = document.getElementById('promoClose');
-  const promoLater = document.getElementById('promoLater');
-
-  let promoShown = sessionStorage.getItem('promoShown') === 'true';
-
-  function showPromoModal() {
-    if (promoShown || !promoModal) return;
-    promoModal.classList.add('active');
-    promoOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    promoShown = true;
-    sessionStorage.setItem('promoShown', 'true');
-  }
-
-  function hidePromoModal() {
-    if (!promoModal) return;
-    promoModal.classList.remove('active');
-    promoOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (promoClose) promoClose.addEventListener('click', hidePromoModal);
-  if (promoLater) promoLater.addEventListener('click', hidePromoModal);
-  if (promoOverlay) promoOverlay.addEventListener('click', hidePromoModal);
-
-  let promoTriggered = false;
-  function checkPromoTrigger() {
-    if (promoTriggered || promoShown) return;
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercent > 30) {
-      promoTriggered = true;
-      setTimeout(showPromoModal, 500);
-    }
-  }
-  window.addEventListener('scroll', checkPromoTrigger, { passive: true });
-
-  // ============================================
-  // 💬 CHAT BUBBLE
-  // ============================================
-  const chatToggle = document.getElementById('chatToggle');
-  const chatWindow = document.getElementById('chatWindow');
-  const chatClose = document.getElementById('chatClose');
-
-  if (chatToggle && chatWindow) {
-    chatToggle.addEventListener('click', () => {
-      chatWindow.classList.toggle('active');
-      const badge = chatToggle.querySelector('.chat-badge');
-      if (badge) badge.style.display = 'none';
-    });
-  }
-
-  if (chatClose && chatWindow) {
-    chatClose.addEventListener('click', () => {
-      chatWindow.classList.remove('active');
-    });
-  }
-
-  let chatTriggered = false;
-  function checkChatTrigger() {
-    if (chatTriggered) return;
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercent > 60) {
-      chatTriggered = true;
-      setTimeout(() => {
-        if (chatWindow && !chatWindow.classList.contains('active')) {
-          chatWindow.classList.add('active');
-          const badge = chatToggle ? chatToggle.querySelector('.chat-badge') : null;
-          if (badge) badge.style.display = 'none';
-        }
-      }, 2000);
-    }
-  }
-  window.addEventListener('scroll', checkChatTrigger, { passive: true });
-
-  // ============================================
-  // 🎁 PROMO BANNER (top)
-  // ============================================
-  const promoBanner = document.getElementById('promoBanner');
-  const bannerClose = document.getElementById('bannerClose');
-
-  let bannerShown = sessionStorage.getItem('bannerShown') === 'true';
-
-  if (!bannerShown && promoBanner) {
-    // Shfaq pas 2 minutash (120000ms). Për testim ndrysho në 15000 (15 sekonda)
-    setTimeout(() => {
-      promoBanner.classList.add('active');
-      document.body.classList.add('banner-active');
-      sessionStorage.setItem('bannerShown', 'true');
-    }, 120000);
-  }
-
-  if (bannerClose && promoBanner) {
-    bannerClose.addEventListener('click', () => {
-      promoBanner.classList.remove('active');
-      document.body.classList.remove('banner-active');
-    });
-  }
-
-  // ============================================
-  // 📢 PROMO TOAST (çdo 90s)
-  // ============================================
-  const promoToast = document.getElementById('promoToast');
-  let toastInterval;
-
-  function showToast() {
-    if (!promoToast) return;
-    promoToast.classList.add('active');
-    setTimeout(() => {
-      promoToast.classList.remove('active');
-    }, 8000);
-  }
-
-  if (promoToast && !sessionStorage.getItem('toastShown')) {
-    setTimeout(() => {
-      showToast();
-      sessionStorage.setItem('toastShown', 'true');
-      toastInterval = setInterval(showToast, 90000);
-    }, 30000);
-  }
-
-  window.addEventListener('beforeunload', () => {
-    if (toastInterval) clearInterval(toastInterval);
-  });
-
-  // ============================================
-  // ✨ FLOATING CTA (pulsing)
-  // ============================================
-  const floatingCTA = document.createElement('a');
-  floatingCTA.href = '#contact';
-  floatingCTA.className = 'floating-cta';
-  floatingCTA.innerHTML = `
-    <i class="fas fa-bolt"></i>
-    <span data-key="float_cta">Hire Me Now</span>
-  `;
-  document.body.appendChild(floatingCTA);
-
-  // Apliko gjuhën për elementin e ri
-  const floatCtaSpan = floatingCTA.querySelector('[data-key="float_cta"]');
-  if (floatCtaSpan) {
-    floatCtaSpan.textContent = translations[currentLang].float_cta || 'Hire Me Now';
-  }
-
-  let ctaTriggered = false;
-  function checkCtaTrigger() {
-    if (ctaTriggered) return;
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercent > 40) {
-      ctaTriggered = true;
-      floatingCTA.classList.add('active');
-    }
-  }
-  window.addEventListener('scroll', checkCtaTrigger, { passive: true });
-
-  const contactSection = document.getElementById('contact');
-  if (contactSection) {
-    const contactObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          floatingCTA.classList.remove('active');
-        } else if (ctaTriggered) {
-          floatingCTA.classList.add('active');
-        }
-      });
-    }, { threshold: 0.3 });
-    contactObserver.observe(contactSection);
-  }
-
-  // ============================================
   // KEYBOARD SHORTCUTS
   // ============================================
   document.addEventListener('keydown', (e) => {
@@ -687,7 +483,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (e.key === 'Escape') {
-      if (promoModal && promoModal.classList.contains('active')) hidePromoModal();
       if (chatWindow && chatWindow.classList.contains('active')) {
         chatWindow.classList.remove('active');
       }
